@@ -1,4 +1,8 @@
 working/logs/
-working/models/
 *.pyc
 __pycache__/
+# Large OWL and N3 files — built outputs; deploy separately
+**/kbpedia_reference_concepts.owl
+**/kbpedia_reference_concepts.n3
+**/kbpedia_reference_concepts_linkage.n3
+**/kbpedia_reference_concepts_linkage_inferrence_extended.n3
