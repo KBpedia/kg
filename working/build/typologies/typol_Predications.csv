@@ -1,0 +1,3 @@
+id,subclassof,parent
+http://kbpedia.org/ontologies/kko#Predications,rdfs:subClassOf,http://kbpedia.org/ontologies/kko#Generals
+http://kbpedia.org/ontologies/kko#Predications,rdfs:subClassOf,owl:Thing

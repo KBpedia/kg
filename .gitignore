@@ -1,0 +1,4 @@
+working/logs/
+working/models/
+*.pyc
+__pycache__/
