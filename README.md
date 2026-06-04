@@ -1,5 +1,7 @@
 # KBpedia Knowledge Graph — kg Repository
 
+**Note:** This repository is under active development for v3.00 (planned Fall 2026). The current public release is v2.50. Download the v2.50 OWL files from kbpedia.org/resources/downloads/.
+
 ## Overview
 
 This repository contains the **source files and build artifacts** for the
