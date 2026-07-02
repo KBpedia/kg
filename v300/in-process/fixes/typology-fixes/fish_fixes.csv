@@ -1,0 +1,21 @@
+id,subClassOf,parent,notes
+Osteichthyes,subClassOf,Fish,Adds class for bony fish; groups most existing fish like Salmon
+Pleuronectiformes,subClassOf,Osteichthyes,Adds order for flatfish; expands bony fish diversity
+Flounder,subClassOf,Pleuronectiformes,Adds common flatfish; balances Osteichthyes
+Anguilliformes,subClassOf,Osteichthyes,Adds order for eels; groups existing Eel
+Eel,subClassOf,Anguilliformes,Correction: Moves Eel to Anguilliformes for taxonomic clarity
+Siluriformes,subClassOf,Osteichthyes,Adds order for catfish; groups existing Catfish
+Catfish,subClassOf,Siluriformes,Correction: Moves Catfish to Siluriformes for taxonomic clarity
+Clownfish,subClassOf,TropicalFish,Adds iconic tropical fish; complements Guppy
+Sardine,subClassOf,Herring,Adds common herring species; expands EdibleFish
+Skate,subClassOf,Chondrichthyes,Adds ray-like cartilaginous fish; complements StingRay
+Chimaera,subClassOf,Chondrichthyes,Adds chimaerid fish; balances cartilaginous diversity
+Hagfish,subClassOf,Agnatha,Adds jawless fish; complements Lamprey
+Anglerfish,subClassOf,Osteichthyes,Adds deep-sea fish; complements Blobfish
+NeonTetra,subClassOf,TropicalFish,Adds popular aquarium fish; balances TropicalFish
+Chondrichthyes,subClassOf,Fish,Adds class for cartilaginous fish; groups Shark and Ray-Fish
+Agnatha,subClassOf,Fish,Adds class for jawless fish; groups Lamprey and Hagfish
+AnchovyProducts,subClassOf,None,Correction: Flags non-fish entry under Anchovy for removal or reclassification
+Shark-GreatWhite,subClassOf,Shark,Correction: Moves Shark-GreatWhite from DangerousTangibleThing to Shark
+Pufferfish,subClassOf,Osteichthyes,Adds tetraodontiform fish; expands bony fish variety
+FlyingFish,subClassOf,Osteichthyes,Adds exocoetid fish; enhances ecological diversity

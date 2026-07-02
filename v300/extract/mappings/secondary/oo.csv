@@ -1,0 +1,10 @@
+s,p,o
+http://kbpedia.org/kko/rc/Agent_Generic,rdfs:subClassOf,http://purl.org/dc/terms/Agent
+http://kbpedia.org/kko/rc/Capability,rdfs:subClassOf,http://purl.org/openorg/Capability
+http://kbpedia.org/kko/rc/ComputerImageFile,owl:equivalentClass,http://xmlns.com/foaf/0.1/Image
+http://kbpedia.org/kko/rc/Facility_Construct,rdfs:subClassOf,http://purl.org/openorg/Facility
+http://kbpedia.org/kko/rc/Organization,owl:equivalentClass,http://xmlns.com/foaf/0.1/Organization
+http://kbpedia.org/kko/rc/Person,owl:equivalentClass,http://xmlns.com/foaf/0.1/Person
+http://kbpedia.org/kko/rc/PhysicalDevice,rdfs:subClassOf,http://purl.org/openorg/Equipment
+http://kbpedia.org/kko/rc/ServiceEvent,rdfs:subClassOf,http://purl.org/openorg/Service
+http://kbpedia.org/kko/rc/VisualArtifact,rdfs:subClassOf,http://xmlns.com/foaf/0.1/Image

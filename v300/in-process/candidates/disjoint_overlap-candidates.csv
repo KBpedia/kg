@@ -1,0 +1,11 @@
+rc,typology_a,typology_b
+ForensicMeteorology,AttributeTypes,InquiryMethods
+ForensicMeteorology,ContextualAttributes,InquiryMethods
+MeteorologyCompetition,EventTypes,Facilities
+MeteorologyCompetition,EventTypes,Places
+ForensicMeteorology,Facilities,InquiryMethods
+AtmosphericThermodynamics,Facilities,NaturalPhenomena
+MeteorologyCompetition,Facilities,TimeTypes
+ForensicMeteorology,InquiryMethods,Places
+AtmosphericThermodynamics,NaturalPhenomena,Places
+MeteorologyCompetition,Places,TimeTypes

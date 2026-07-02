@@ -1,3 +1,0 @@
-id,subclassof,parent
-http://kbpedia.org/ontologies/kko#AttributeTypes,rdfs:subClassOf,http://kbpedia.org/ontologies/kko#Predications
-http://kbpedia.org/ontologies/kko#AttributeTypes,rdfs:subClassOf,owl:Thing

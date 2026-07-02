@@ -1,0 +1,7 @@
+child,parent,child_typology,parent_typology
+AtmosphericThermodynamics,Meteorology,NaturalPhenomena,Facilities
+AtmosphericThermodynamics,ThermodynamicSystem,Facilities,NaturalPhenomena
+ForensicMeteorology,ForensicScience,AttributeTypes,InquiryMethods
+ForensicMeteorology,Meteorology,InquiryMethods,AttributeTypes
+MeteorologyCompetition,Meteorology,EventTypes,Facilities
+MeteorologyCompetition,ScienceCompetition,Facilities,EventTypes

@@ -1,0 +1,9 @@
+s,p,o
+http://kbpedia.org/kko/rc/Fare,rdfs:subClassOf,http://vocab.org/transit/terms/Fare
+http://kbpedia.org/kko/rc/Organization,owl:equivalentClass,http://xmlns.com/foaf/0.1/Organization
+http://kbpedia.org/kko/rc/Person,owl:equivalentClass,http://xmlns.com/foaf/0.1/Person
+http://kbpedia.org/kko/rc/Terminal_TransferPoint,rdfs:subClassOf,http://purl.org/dc/dcmitype/Transfer
+http://kbpedia.org/kko/rc/Terminal_TransferPoint,rdfs:subClassOf,http://vocab.org/transit/terms/Station
+http://kbpedia.org/kko/rc/TextString,owl:equivalentClass,http://purl.org/dc/dcmitype/Text
+http://kbpedia.org/kko/rc/TimetableInformation,owl:equivalentClass,http://vocab.org/transit/terms/Schedule
+http://kbpedia.org/kko/rc/TravelRoute,rdfs:subClassOf,http://vocab.org/transit/terms/Route

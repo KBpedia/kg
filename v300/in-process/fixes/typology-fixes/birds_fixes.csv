@@ -1,0 +1,34 @@
+id,subClassOf,parent,notes
+Galliformes,subClassOf,Bird,Adds order for game birds; groups Chicken, Pheasant, Quail
+Turkey,subClassOf,Galliformes,Adds broader turkey category; complements OcellatedTurkey
+Passeriformes,subClassOf,Bird,Adds order for songbirds; groups Finch, Sparrow, Crow
+Robin,subClassOf,Passeriformes,Adds common songbird; complements Robin-American
+Swallow,subClassOf,Passeriformes,Adds common songbird; expands Passeriformes coverage
+Coraciiformes,subClassOf,Bird,Adds order for kingfishers and rollers; groups Kingfisher
+Roller,subClassOf,Coraciiformes,Adds roller family; balances Kingfisher
+Gruiformes,subClassOf,Bird,Adds order for rails and cranes; groups Crane-Bird, GuamRail
+Coot,subClassOf,Gruiformes,Adds broader coot category; complements AmericanCoot
+Procellariiformes,subClassOf,Bird,Adds order for seabirds; groups Albatross, Petrel
+Gannet,subClassOf,Procellariiformes,Adds common seabird; complements Pelican
+Teal,subClassOf,Anas,Adds broader teal category; complements specific teals like BaikalTeal
+BaikalTeal,subClassOf,Teal,Correction: Moves BaikalTeal from Anas to new Teal category
+Kestrel,subClassOf,Falcon,Adds broader kestrel category; complements CommonKestrel
+CommonKestrel,subClassOf,Kestrel,Correction: Moves CommonKestrel from Falcon to new Kestrel category
+Lovebird,subClassOf,Parrot,Adds broader lovebird category; complements FischersLovebird
+FischersLovebird,subClassOf,Lovebird,Correction: Moves FischersLovebird from Parrot to new Lovebird category
+Barbet,subClassOf,Piciformes,Adds barbet family; complements Woodpecker
+BarnOwl,subClassOf,Tytonidae,Adds specific barn owl; clarifies Owl-Barn under Tytonidae
+Cassowary,subClassOf,Casuariidae,Adds specific cassowary species; complements Casuariidae
+Avocet,subClassOf,ShoreBird,Adds avocet genus; expands Scolopacidae-heavy shorebirds
+Booby,subClassOf,Procellariiformes,Adds common seabird; balances Seabird coverage
+Grebe,subClassOf,Bird,Adds grebe family; complements TiticacaFlightlessGrebe
+Flamingo,subClassOf,Bird,Adds broader flamingo category; existing flamingos are specific
+Heron,subClassOf,Bird,Adds broader heron category; existing herons are specific
+Puffin,subClassOf,Seabird,Adds broader puffin category; complements Seabird
+Grouse,subClassOf,Galliformes,Adds common game bird; balances Galliformes
+Cardinal,subClassOf,Passeriformes,Adds distinctive songbird; complements Finch
+Lark,subClassOf,Passeriformes,Adds common songbird; expands Passeriformes
+Hoopoe,subClassOf,Coraciiformes,Adds distinctive coraciiform; balances Coraciiformes
+CornishHen,subClassOf,Chicken,Correction: Moves CornishHen from FemaleAnimal to Chicken
+FoilKite,subClassOf,None,Correction: Flags non-bird entry under Kite-TheBird; likely meant Fork-tailedKite
+Fork-tailedKite,subClassOf,Kite-TheBird,Correction: Replaces FoilKite with correct bird species

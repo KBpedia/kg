@@ -1,0 +1,17 @@
+You are Grok 3 built by xAI. I’m providing a hierarchical (subsumptive) dataset as a CSV file titled "typol_<category>.csv", located in the 'typologies' subdirectory. Each "typol_<category>.csv" file contains "id - subClassOf - parent" relations for the "<Category>" category. The <category> name is contained within the "typol_<category>.csv" file name. The 'root' is the same as <category>.
+
+My goal is to create a Python script that can run within a Jupyter Notebook cell. The result of running this script is to write an output CSV file (UTF-8 encoding) as input to a second Python script, to be defined later.  (e.g., Mammals, Birds, Reptiles). My goal is to split this into subcategories, characterize each, and enhance the dataset. Please follow this workflow:
+
+1. **Split and Characterize**: Assume "<category>.csv" is a pre-split subcategory file (e.g., "mammals.csv" from "animals.csv"). Characterize its structure (e.g., top-level nodes, depth, breadth), coverage (e.g., orders, families, species richness), and note anomalies (e.g., non-taxonomic entries).
+2. **Analyze Gaps**: Identify missing taxonomic levels (e.g., orders, families) or notable species, focusing on underrepresented groups. Use your knowledge up to March 01, 2025, to compare against standard taxonomy.
+3. **Suggest Enhancements**: Propose ~20-30 new entries (adjust based on file size) in "id,subClassOf,parent,notes" format, balancing across nodes (e.g., orders or families), fixing anomalies, and moving existing items under new categories where applicable (e.g., "FischersLovebird" to "Lovebird").
+4. **Output CSV**: Provide the suggestions as a CSV text block. Include a Python snippet to save it as "<category>_suggestions.csv" and instructions for integration (e.g., appending to original, updating entries).
+
+Example Python snippet:
+```python
+import pandas as pd
+data = """id,subClassOf,parent,notes
+<example entries>
+"""
+df = pd.read_csv(pd.compat.StringIO(data))
+df.to_csv("<category>_suggestions.csv", index=False, encoding="utf-8")

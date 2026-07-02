@@ -1,0 +1,27 @@
+frag,field,old,new,reason
+Cintia,version_status,ADD_250,UNCHANGED,extract-driven reclassify
+Jerusalem,version_status,ADD_250,UNCHANGED,extract-driven reclassify
+RidgensPenguin,version_status,ADD_250,UNCHANGED,extract-driven reclassify
+Spur_throatedGrasshopper,version_status,ADD_250,REVISED,extract-driven reclassify
+XMStrip,version_status,ADD_250,REVISED,extract-driven reclassify
+AmericanHogNosedSkunk,version_status,ADD_Q,REVISED,extract-driven reclassify
+AncientLanguages,version_status,ADD_Q,REVISED,extract-driven reclassify
+BlueLinedOctopus,version_status,ADD_Q,REVISED,extract-driven reclassify
+Cancer,version_status,ADD_Q,UNCHANGED,extract-driven reclassify
+EndogenousInfection,version_status,ADD_Q,UNCHANGED,extract-driven reclassify
+HomosexualBehavior_Male,version_status,ADD_Q,REVISED,extract-driven reclassify
+HomosexualMaleHuman,version_status,ADD_Q,UNCHANGED,extract-driven reclassify
+LongClawedGroundSquirrel,version_status,ADD_Q,REVISED,extract-driven reclassify
+MolinasHogNosedSkunk,version_status,ADD_Q,REVISED,extract-driven reclassify
+QualityAttribute,version_status,ADD_Q,REVISED,extract-driven reclassify
+RedBelliedSquirrel,version_status,ADD_Q,REVISED,extract-driven reclassify
+RedCheekedSquirrel,version_status,ADD_Q,REVISED,extract-driven reclassify
+ShrewFacedSquirrel,version_status,ADD_Q,REVISED,extract-driven reclassify
+StripedHogNosedSkunk,version_status,ADD_Q,REVISED,extract-driven reclassify
+AltaLomaEntertainment,MISSING_FROM_EXTRACT,ADDED,,frag not in promoted extract; review
+Bryopsida,old_qid_REVIEW,Q2710526,,"stray old_qid, no frag_old: NEW_QID or clear? (needs your call / WD pull)"
+Frame_Network,version_status,ADDED,REVISED,extract-driven reclassify
+Frame_Network,old_qid,Q5227299,,"cleared: REVISED rename, old_qid spurious"
+GeopoliticalFlag,MISSING_FROM_EXTRACT,ADDED,,frag not in promoted extract; review
+Oceania_Region,version_status,ADDED,REVISED,extract-driven reclassify
+Oceania_Region,old_qid,Q538,,"cleared: REVISED rename, old_qid spurious"

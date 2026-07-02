@@ -1,0 +1,64 @@
+KBpedia profile report — v300 — 2026-06-22 13:01
+forms: /home/mkbergman/6-KBpedia-Dev/kg/working/extract/in-process
+
+=== typology_balance (scope=v300, rows=72) ===
+    typologies: 72
+    total_members (with multiplicity): 367123
+    median_member_count: 1919
+    mean_member_count: 5098.9
+    largest: Manifestations (53166)
+    smallest: DirectRelations (37)
+    typologies_with_orphans: 0
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/typology_balance.csv (72 rows)
+
+=== concept_multiplicity (scope=v300, rows=23) ===
+    distinct_concepts: 59526
+    total_memberships (with multiplicity): 367123
+    avg_typologies_per_concept: 6.17
+    max_typologies_per_concept: 25
+    single_typology_concepts: 258
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/concept_multiplicity.csv (23 rows)
+
+=== coverage_overlap (scope=v300, rows=40) ===
+    typology_pairs_with_any_overlap: 1500
+    possible_pairs: 2556
+    top_n_shown: 40
+    of_top_n, near-containment (>=0.95): 32
+    of_top_n, cross-cutting (<0.95): 8
+    largest_overlap: Manifestations/Symbolic (34844)
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/coverage_overlap.csv (40 rows)
+
+=== typology_exclusivity (scope=v300, rows=72) ===
+    most_entangled: AVInfo (0.0% exclusive)
+    most_distinctive: Manifestations (0.5% exclusive)
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/typology_exclusivity.csv (72 rows)
+
+=== definition_wordcount (scope=v300, rows=7) ===
+    entities: 59691
+    missing: 7 (0.0%)
+    weak (<6 words): 5017
+    overlong (>180 words): 84
+    label_echo (def == prefLabel): 1610
+    median_words (present): 27.0
+    duplicate_groups (>=3): 141
+    entities_in_dup_groups: 784
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/definition_wordcount.csv (7 rows)
+
+=== definition_by_typology (scope=v300, rows=72) ===
+    typologies: 72
+    worst_coverage: Prokaryotes (0.3% missing)
+    best_coverage: WrittenInfo (0.0% missing)
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/definition_by_typology.csv (72 rows)
+
+=== definition_duplicates (scope=v300, rows=141) ===
+    duplicate_groups: 141
+    entities_in_dups: 784
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/definition_duplicates.csv (141 rows)
+
+=== facet_score (scope=v300, rows=72) ===
+    typologies: 72
+    top facet-likes (non-tier): Systems(0.931), KnowledgeDomains(0.925), Methodeutic(0.923), CopulativeRelations(0.912), Artifacts(0.887), ActionTypes(0.882)
+    most natural-kind (lowest score, non-tier): Prokaryotes(0.058), Geopolitical(0.088), DirectRelations(0.101), AdjunctualAttributes(0.13), Times(0.145)
+    tier_roots (broad by containment, excluded from facet judgment): Manifestations, Symbolic, Constituents, RelationTypes, Predications, SpaceTypes, AttributeTypes, OrganicMatter, TimeTypes, NaturalPhenomena, RepresentationTypes, NaturalMatter, LivingThings
+    [note] facet_score nominates by behavior; confirm against KKO tier placement before declaring a typology a facet.
+    -> table written: /home/mkbergman/6-KBpedia-Dev/kg/working/profile/facet_score.csv (72 rows)

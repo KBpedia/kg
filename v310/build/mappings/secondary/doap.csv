@@ -1,0 +1,11 @@
+s,p,o
+http://kbpedia.org/kko/rc/Agent_Generic,owl:equivalentClass,http://xmlns.com/foaf/0.1/Agent
+http://kbpedia.org/kko/rc/Concept,owl:equivalentClass,http://www.w3.org/2004/02/skos/core#Concept
+http://kbpedia.org/kko/rc/InformationStore,rdfs:subClassOf,http://usefulinc.com/ns/doap#Repository
+http://kbpedia.org/kko/rc/InternetService,rdfs:subClassOf,http://xmlns.com/foaf/0.1/OnlineAccount
+http://kbpedia.org/kko/rc/Label_IBO,owl:equivalentClass,http://xmlns.com/foaf/0.1/LabelProperty
+http://kbpedia.org/kko/rc/MultiIndividualAgent_Intelligent,owl:equivalentClass,http://xmlns.com/foaf/0.1/Group
+http://kbpedia.org/kko/rc/Organization,owl:equivalentClass,http://xmlns.com/foaf/0.1/Organization
+http://kbpedia.org/kko/rc/Project,rdfs:subClassOf,http://xmlns.com/foaf/0.1/Project
+http://kbpedia.org/kko/rc/SpatialThing,rdfs:subClassOf,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+http://kbpedia.org/kko/rc/Specification,rdfs:subClassOf,http://usefulinc.com/ns/doap#Specification

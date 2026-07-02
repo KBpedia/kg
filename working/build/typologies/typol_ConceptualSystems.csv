@@ -1,3 +1,0 @@
-id,subclassof,parent
-http://kbpedia.org/ontologies/kko#ConceptualSystems,rdfs:subClassOf,http://kbpedia.org/ontologies/kko#Systems
-http://kbpedia.org/ontologies/kko#ConceptualSystems,rdfs:subClassOf,owl:Thing

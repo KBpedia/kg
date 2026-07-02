@@ -1,3 +1,0 @@
-id,subclassof,parent
-http://kbpedia.org/ontologies/kko#Eukaryotes,rdfs:subClassOf,http://kbpedia.org/ontologies/kko#LivingThings
-http://kbpedia.org/ontologies/kko#Eukaryotes,rdfs:subClassOf,owl:Thing
