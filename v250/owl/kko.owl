@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://kbpedia.org/ontologies/kko#"
-     versionIRI="http://kbpedia.org/kbpedia/v300">
+     versionIRI="http://kbpedia.org/kbpedia/v250">
     <Prefix name="" IRI="http://kbpedia.org/ontologies/kko#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -21,11 +21,11 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="prefURI"/>
-        <Literal xml:lang="en">http://www.kbpedia.org/ontologies/kko.owl</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://www.kbpedia.org/ontologies/kko.n3</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/date"/>
-        <Literal xml:lang="en">2020-05-30T20:00:00Z</Literal>
+        <Literal xml:lang="en">2020-02-10T20:00:00Z</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/dateCopyrighted"/>
@@ -96,16 +96,12 @@ Words and language are themselves a Thirdness, which is the result of signmaking
         <Literal xml:lang="en">Version 2.21 of KKO and KBpedia was updated Dec 7, 2019, with minor placement improvements from the original v 2.20, released Nov 11, 2019. This version was devoted to clean up of the individual typologies in the system, the removal of long species lists and individuals, some re-organization of the results, and removal of UMBEL linkages due to the retirement of that system. Nearly 2000 reference concepts (RCs) were removed from KBpedia due to these changes.</Literal>
     </Annotation>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="owl:priorVersion"/>
-        <Literal xml:lang="en">Version 2.50 of KKO and KBpedia, released Feb 10, 2020, was a major upgrade that resulted in version numbers skipping forward. The major change in this version was to completely integrate the UN Standard Products and Services Codes (UNSPSC) as the seventh core knowledge base included in the system, joining Wikidata, Wikipedia, OpenCyc, schema.org, GeoNames, and DBpedia. This addition brought ecommerce and marketing capabilities to KBpedia. The Products typology was split into three parts and better disjointedness tests were added to the system. 
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en">Version 2.50 of KKO and KBpedia, released Feb 10, 2020, is another major upgrade that resulted in version numbers skipping forward. The major change in this version is to completely integrate the UN Standard Products and Services Codes (UNSPSC) as the seventh core knowledge base included in the system, joining Wikidata, Wikipedia, OpenCyc, schema.org, GeoNames, and DBpedia. This addition now brings ecommerce and marketing capabilities to KBpedia. The Products typology was split into three parts and better disjointedness tests were added to the system. 
 
-The addition of UNSPSC added a net of about 5000 reference concepts (RCs) to the system, including identification and removal of about 700 duplicate RCs from the merge. (Total RCs exceed 58 K.) Mappings to Wikidata and Wikipedia were also made for the UNSPSC structure, which contains all three levels of the four-level UNSPSC structure, as well as thousands of the &apos;commodity&apos; level items in it. 
+The addition of UNSPSC added a net of about 5000 reference concepts (RCs) to the system, including identification and removal of about 700 duplicate RCs from the merge. (Total RCs now exceed 58 K.) Mappings to Wikidata and Wikipedia were also made for this new UNSPSC structure, which now contains all three levels of the four-level UNSPSC structure, as well as thousands of the &apos;commodity&apos; level items in it. 
 
 Property mappings to UNSPSC, Wikidata, Wikipedia, and GeoNames, while previously available in separate mapping files, were also added to the base KBpedia system. Note that these KBpedia mappings are still available as separate files.</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en">Version 3.0 is the first of KBpedia to be built with the cowpoke package.</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
@@ -13679,6 +13675,38 @@ It is appropriate to use this property when there is strong belief the two resou
     <SubAnnotationPropertyOf>
         <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceUri"/>
         <AnnotationProperty IRI="identifiers"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="relateds"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AnnotationProperty IRI="labels"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <AnnotationProperty IRI="relateds"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="owl:backwardCompatibleWith"/>
+        <AnnotationProperty IRI="relateds"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <AnnotationProperty IRI="augments"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="owl:incompatibleWith"/>
+        <AnnotationProperty IRI="relateds"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="owl:priorVersion"/>
+        <AnnotationProperty IRI="relateds"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <AnnotationProperty IRI="augments"/>
     </SubAnnotationPropertyOf>
     <SubAnnotationPropertyOf>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>

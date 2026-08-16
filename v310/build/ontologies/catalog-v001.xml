@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://kbpedia.org/kko/v310" uri="kko.owl"/>
     <uri id="Imports Wizard Entry" name="http://kbpedia.org/kko/v300" uri="kko.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1782779186489" name="duplicate:http://kbpedia.org/kko/rc/" uri="kbpedia_reference_concepts_old.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1782779186489" name="duplicate:http://kbpedia.org/kko/rc/" uri="kbpedia_reference_concepts.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1782779186489" name="duplicate:http://kbpedia.org/ontologies/kko" uri="kko_old.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1782779186489" name="duplicate:http://kbpedia.org/ontologies/kko" uri="kko.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1782779186489" name="duplicate:http://kbpedia.org/ontologies/kko" uri="kko_pre_relatesto.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1784655017166" name="http://kbpedia.org/kko/rc" uri="kbpedia_reference_concepts.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1784655017166" name="http://kbpedia.org/ontologies/kko" uri="kko.owl"/>
     </group>
 </catalog>

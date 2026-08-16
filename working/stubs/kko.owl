@@ -8,11 +8,11 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:core="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:term="http://purl.org/dc/terms/"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:x_1.1="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://kbpedia.org/ontologies/kko">
-        <owl:versionIRI rdf:resource="http://kbpedia.org/kko/v300"/>
+        <owl:versionIRI rdf:resource="http://kbpedia.org/kko/v310"/>
         <owl:imports rdf:resource="https://www.w3.org/2009/08/skos-reference/skos-owl1-dl.rdf"/>
         <ns:license rdf:resource="http://creativecommons.org/licenses/by/4.0"/>
         <prefURI xml:lang="en">http://www.kbpedia.org/ontologies/kko.owl</prefURI>
@@ -46,7 +46,8 @@ Words and language are themselves a Thirdness, which is the result of signmaking
 The addition of UNSPSC added a net of about 5000 reference concepts (RCs) to the system, including identification and removal of about 700 duplicate RCs from the merge. (Total RCs exceed 58 K.) Mappings to Wikidata and Wikipedia were also made for the UNSPSC structure, which contains all three levels of the four-level UNSPSC structure, as well as thousands of the &apos;commodity&apos; level items in it. 
 
 Property mappings to UNSPSC, Wikidata, Wikipedia, and GeoNames, while previously available in separate mapping files, were also added to the base KBpedia system. Note that these KBpedia mappings are still available as separate files.</owl:priorVersion>
-        <owl:versionInfo xml:lang="en">Version 3.0 is the first of KBpedia to be built with the cowpoke package. Major changes that have occurred with this release are: 1) dropping of the mappings to OpenCyc, since that system has been abandoned by its developers, Cycorp; 2) replacement of all hyphens in IRI names with underscores to make the system more friendly to Python development; 3) a winnowing of the typology assignments to reduce non-germane ones (about two-thirds of prior assignments have been eliminated without affecting the intent or disjointedness assertions of prior versions; 4) in KKO, expanding the relatesToXXX properties and removing the hasAspectsXXX construct; and 5) general bug fixes and updated values and mapped items in the five years since the prior release.</owl:versionInfo>
+        <owl:priorVersion xml:lang="en">Version 3.0 was the first of KBpedia to be built with the cowpoke package. Major changes that occurred with this release were: 1) dropping of the mappings to OpenCyc, since that system has been abandoned by its developers, Cycorp; 2) replacement of all hyphens in IRI names with underscores to make the system more friendly to Python development; 3) a winnowing of the typology assignments to reduce non-germane ones (about two-thirds of prior assignments have been eliminated without affecting the intent or disjointedness assertions of prior versions; and 4) general bug fixes and updated values and mapped items in the five years since the prior release.</owl:priorVersion>
+        <owl:versionInfo xml:lang="en">Version 3.1 is the first KBpedia version to be built with the full assistance of artificial intelligence (AI), namely the Claude large language model (LLM) from Anthropic. Early LLM work with this version also relied upon Grok from XAI and ChatGPT from OpenAI. Major changes that have occurred with this release are: 1) streamlining the build and extract &quot;roundtripping&quot; code by bringing consistency in build terminology and the reliance on command-line interface (CLI) switches versus use of Python dicts and configuration changes; 2) adding about 5000 Wikidata property mappings organized into a hierarchical structure informed by the work of Charles Sanders Peirce; 3) improved integrity checks and updates assisted by AI code; 4) generalization and moe consistent terminology across the cowpoke code base; 5) improved graph and entity visualizations in the KBpedia Web site; 6) AI-assistance analysis across the typology structure of KBpedia to improve the scope and balance of reference concepts in the system, resulting in the addition of a significant number of new RCs and the deletion of imbalanced older ones; and 7) other consistency checks across the knowledge graph. This version is now fully staged for advanced applications of AI to KBpedia.</owl:versionInfo>
         <core:altLabel xml:lang="en">KKO</core:altLabel>
         <core:definition xml:lang="en">The KBpedia Knowledge Ontology (KKO) is a foundational ontology for capturing the essential components (or &apos;primitives&apos;) of knowledge bases. It is designed for mapping and interoperating diverse ontologies -- or knowledge graphs (KGs) -- to one another. The ultimate objective of KKO is to provide an ontology that surfaces and organizes the features within knowledge bases most useful to machine learning, artificial intelligence, data interoperability and mapping, and fact tagging and extraction.</core:definition>
         <core:editorialNote xml:lang="en">In KKO, &apos;CSP&apos; is a shorthand for Charles Sanders Peirce (see https://en.wikipedia.org/wiki/Charles_Sanders_Peirce), whose writings have had a great influence on the design of this knowledge graph. 
@@ -321,6 +322,7 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
         <core:prefLabel xml:lang="en">relates to</core:prefLabel>
         <core:scopeNote xml:lang="en">Parent property for all relatesToXXX annotations in KBpedia</core:scopeNote>
+        <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#structureAnnotations"/>
     </owl:AnnotationProperty>
     
 
@@ -329,6 +331,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToActionTypes">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.ActionTypes to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to action types</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -338,6 +343,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToAdjunctualAttributes">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.AdjunctualAttributes to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to adjunctual attributes</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -347,6 +355,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToAgents">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Agents to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to agents</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -356,6 +367,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToAnimals">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Animals to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to animals</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -365,6 +379,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToAreaRegion">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.AreaRegion to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to area or region</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -374,6 +391,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToArtifacts">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Artifacts to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to artifacts</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -382,8 +402,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToAtomsElements -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToAtomsElements">
-        <x_1.1:description xml:lang="en">Annotation linking kko.AtomsElements to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.AtomsElements to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to atoms or elements</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -395,6 +415,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToAudioInfo">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.AudioInfo to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to audio info</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -403,8 +426,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToBiologicalChemistry -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToBiologicalChemistry">
-        <x_1.1:description xml:lang="en">Annotation linking kko.BioChemistry to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.BioChemistry to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to biochemistry</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -415,8 +438,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToBiologicalProcesses -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToBiologicalProcesses">
-        <x_1.1:description xml:lang="en">Annotation linking kko.BioProcesses to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.BioProcesses to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to biological processes</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -428,6 +451,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToChemistry">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Chemistry to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to chemistry</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -437,6 +463,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToConcepts">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Concepts to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to concepts</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -446,6 +475,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToContextualAttributes">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.ContextualAttributes to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to contextual attributes</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -455,6 +487,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToCopulativeRelations">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.CopulativeRelations to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to copulative relations</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -464,6 +499,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToDirectRelations">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.DirectRelations to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to direct relations</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -473,6 +511,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToDiseases">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Diseases to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to diseases</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -481,8 +522,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToDrugs -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToDrugs">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Drugs to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Drugs to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to drugs</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -494,6 +535,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToEconomicSystems">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.EconomicSystems to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to economic systems</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -503,6 +547,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToEventTypes">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.EventTypes to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to event types</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -511,8 +558,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToFacilities -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToFacilities">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Facilities to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Facilities to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to facilities</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -524,6 +571,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToFoodDrink">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.FoodDrink to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to food or drink</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -533,6 +583,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToForms">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Forms to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to forms</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -542,6 +595,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToGeopolitical">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Geopolitical to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to geopolitical</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -551,6 +607,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToInformation">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Information to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to information</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -559,8 +618,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToInquiryMethods -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToInquiryMethods">
-        <x_1.1:description xml:lang="en">Annotation linking kko.InquiryMethods to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.InquiryMethods to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to inquiry methods</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -572,6 +631,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToIntrinsicAttributes">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.IntrinsicAttributes to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to intrinsic attributes</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -581,6 +643,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToKnowledgeDomains">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.KnowledgeDomains to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to knowledge domains</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -590,6 +655,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToLearningProcesses">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.LearningProcesses to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to learning processes</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -599,6 +667,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToLivingThings">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.LivingThings to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to living things</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -608,6 +679,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToLocationPlace">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.LocationPlace to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to location or place</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -617,6 +691,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToManifestations">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Manifestations to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to manifestations</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -625,8 +702,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToMethodeutic -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToMethodeutic">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Methodeutic to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Methodeutic to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to methodeutic</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -638,6 +715,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToNaturalMatter">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.NaturalMatter to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to natural matter</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -647,6 +727,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToNaturalPhenomena">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.NaturalPhenomena to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to natural phenomena</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -656,6 +739,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToNaturalSubstances">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.NaturalSubstances to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to natural substances</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -665,6 +751,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToOrganicMatter">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.OrganicMatter to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to organic matter</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -674,6 +763,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToOrganizations">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Organizations to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to organizations</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -683,6 +775,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToPersons">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Persons to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to persons</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -692,6 +787,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToPlaces">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Places to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to places</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -700,8 +798,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToPlants -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToPlants">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Plants to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Plants to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to plants</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -712,8 +810,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToPrimarySectorProducts -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToPrimarySectorProducts">
-        <x_1.1:description xml:lang="en">Annotation linking kko.PrimarySectorProducts to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.PrimarySectorProducts to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to products from primary economic sector</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -724,8 +822,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToProducts -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToProducts">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Products to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Products to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to products</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -736,8 +834,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToProkaryotes -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToProkaryotes">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Prokaryotes to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Prokaryotes to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to prokaryotes</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -748,8 +846,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToProtistsFungus -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToProtistsFungus">
-        <x_1.1:description xml:lang="en">Annotation linking kko.ProtistsFungus to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.ProtistsFungus to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to protists or fungus</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -761,6 +859,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToSecondarySectorProducts">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.SecondarySectorProducts to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to products from secondary economic sector</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -770,6 +871,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToShapes">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Shapes to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to shapes</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -779,6 +883,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToSituationTypes">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.SituationTypes to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to situation types</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -787,8 +894,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToSocialSystems -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToSocialSystems">
-        <x_1.1:description xml:lang="en">Annotation linking kko.SocialSystems to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.SocialSystems to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to social systems</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -800,6 +907,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToSociety">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Society to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to society</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -808,8 +918,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToStructuredInfo -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToStructuredInfo">
-        <x_1.1:description xml:lang="en">Annotation linking kko.StructuredInfo to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.StructuredInfo to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to structured info</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -820,8 +930,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToSymbolic -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToSymbolic">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Symbolic to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Symbolic to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to symbolic</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -833,6 +943,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToSystems">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Systems to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to systems</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -842,6 +955,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToTertiarySectorServices">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.TertiarySectorServices to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to services from tertiary economic sector</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -850,8 +966,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToTimes -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToTimes">
-        <x_1.1:description xml:lang="en">Annotation linking kko.Times to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.Times to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to times</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -863,6 +979,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToTopicsCategories">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.TopicsCategories to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to topics or categories</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -872,6 +991,9 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToVisualInfo">
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.VisualInfo to owl:Thing for trace purposes.</core:definition>
+        <core:prefLabel xml:lang="en">relates to visual info</core:prefLabel>
+        <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
     </owl:AnnotationProperty>
     
@@ -880,8 +1002,8 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://kbpedia.org/ontologies/kko#relatesToWrittenInfo -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#relatesToWrittenInfo">
-        <x_1.1:description xml:lang="en">Annotation linking kko.WrittenInfo to owl:Thing for trace purposes.</x_1.1:description>
         <rdfs:isDefinedBy rdf:resource="http://kbpedia.org/ontologies/kko#"/>
+        <core:definition xml:lang="en">Annotation linking kko.WrittenInfo to owl:Thing for trace purposes.</core:definition>
         <core:prefLabel xml:lang="en">relates to written info</core:prefLabel>
         <core:scopeNote xml:lang="en">Non-entailing annotation used in KBpedia to trace conceptual associations across typologies. Serves as an object-property-like link without entailment.</core:scopeNote>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#relatesTo"/>
@@ -905,6 +1027,17 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     
 
 
+    <!-- http://kbpedia.org/ontologies/kko#structureAnnotations -->
+
+    <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#structureAnnotations">
+        <core:altLabel xml:lang="en">struct annotation</core:altLabel>
+        <core:altLabel xml:lang="en">structural annotation</core:altLabel>
+        <core:definition xml:lang="en">An annotation property that includes matching super subsumptions for classes and properties as well as severed inheritance chains to remove abstractions from inheritance hierarchies.</core:definition>
+        <core:prefLabel xml:lang="en">structure annotations</core:prefLabel>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://kbpedia.org/ontologies/kko#superClassOf -->
 
     <owl:AnnotationProperty rdf:about="http://kbpedia.org/ontologies/kko#superClassOf">
@@ -913,6 +1046,7 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
         <core:altLabel xml:lang="en">superclass</core:altLabel>
         <core:definition xml:lang="en">A denotative that the class has subclasses, with the property indicating specific ones.</core:definition>
         <core:prefLabel xml:lang="en">super class of</core:prefLabel>
+        <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#structureAnnotations"/>
     </owl:AnnotationProperty>
     
 
@@ -925,6 +1059,7 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
         <core:altLabel xml:lang="en">superproperty</core:altLabel>
         <core:definition xml:lang="en">A denotative that the property has subproperties, with the property indicating specific ones.</core:definition>
         <core:prefLabel xml:lang="en">super property of</core:prefLabel>
+        <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#structureAnnotations"/>
     </owl:AnnotationProperty>
     
 
@@ -932,10 +1067,10 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://purl.org/dc/elements/1.1/contributor -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
-        <terms:description xml:lang="en">The guidelines for using names of persons or organizations as creators also apply to contributors.  Typically, the name of a Contributor should be used to indicate the entity.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">The guidelines for using names of persons or organizations as creators also apply to contributors.  Typically, the name of a Contributor should be used to indicate the entity.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">An entity responsible for making contributions to the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Contributor</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#augments"/>
@@ -946,10 +1081,10 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
-        <terms:description xml:lang="en">Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">An entity primarily responsible for making the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Creator</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#augments"/>
@@ -960,10 +1095,10 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date">
-        <terms:description xml:lang="en">Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a &apos;/&apos; (slash) character.  Either the start or end date may be missing.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a &apos;/&apos; (slash) character.  Either the start or end date may be missing.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">A point or period of time associated with an event in the lifecycle of the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Date</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/date) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#augments"/>
@@ -982,10 +1117,10 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description">
-        <terms:description xml:lang="en">Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">An account of the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">description</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#descriptions"/>
@@ -996,10 +1131,10 @@ Another resource is the Peirce online discussion list: http://www.iupui.edu/~ari
     <!-- http://purl.org/dc/elements/1.1/publisher -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher">
-        <terms:description xml:lang="en">Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">An entity responsible for making the resource available.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Publisher</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
         <rdfs:subPropertyOf rdf:resource="http://kbpedia.org/ontologies/kko#augments"/>
@@ -7494,87 +7629,87 @@ As an &quot;indecomposable,&quot; this category should be understood as the pote
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/">
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-06-14</terms:modified>
-        <terms:publisher rdf:resource="http://purl.org/dc/aboutdcmi#DCMI"/>
-        <terms:title xml:lang="en">Dublin Core Metadata Element Set, Version 1.1</terms:title>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1">
+        <term:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-06-14</term:modified>
+        <term:publisher rdf:resource="http://purl.org/dc/aboutdcmi#DCMI"/>
+        <term:title xml:lang="en">Dublin Core Metadata Element Set, Version 1.1</term:title>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/coverage">
-        <terms:description xml:lang="en">Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Coverage</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/coverage) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/format">
-        <terms:description xml:lang="en">Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of Internet Media Types [[MIME](https://www.iana.org/assignments/media-types/media-types.xhtml)].</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of Internet Media Types [[MIME](https://www.iana.org/assignments/media-types/media-types.xhtml)].</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">The file format, physical medium, or dimensions of the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Format</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/format) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/identifier">
-        <terms:description xml:lang="en">Recommended practice is to identify the resource by means of a string conforming to an identification system.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Recommended practice is to identify the resource by means of a string conforming to an identification system.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">An unambiguous reference to the resource within a given context.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Identifier</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/identifier) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/language">
-        <terms:description xml:lang="en">Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 [[IETF-BCP47](https://tools.ietf.org/html/bcp47)] language tag.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 [[IETF-BCP47](https://tools.ietf.org/html/bcp47)] language tag.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">A language of the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Language</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/language) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/relation">
-        <terms:description xml:lang="en">Recommended practice is to identify the related resource by means of a URI. If this is not possible or feasible, a string conforming to a formal identification system may be provided.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Recommended practice is to identify the related resource by means of a URI. If this is not possible or feasible, a string conforming to a formal identification system may be provided.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">A related resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Relation</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/relation) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/rights">
-        <terms:description xml:lang="en">Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">Information about rights held in and over the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Rights</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/rights) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/source">
-        <terms:description xml:lang="en">The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">A related resource from which the described resource is derived.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Source</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/source) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/subject">
-        <terms:description xml:lang="en">Typically, the subject will be represented using keywords, key phrases, or classification codes.  Recommended best practice is to use a controlled vocabulary.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Typically, the subject will be represented using keywords, key phrases, or classification codes.  Recommended best practice is to use a controlled vocabulary.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">The topic of the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Subject</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/subject) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">A name given to the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Title</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/title) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/type">
-        <terms:description xml:lang="en">Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [[DCMI-TYPE](http://dublincore.org/documents/dcmi-type-vocabulary/)]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.</terms:description>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <term:description xml:lang="en">Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [[DCMI-TYPE](http://dublincore.org/documents/dcmi-type-vocabulary/)]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.</term:description>
+        <term:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</term:issued>
         <rdfs:comment xml:lang="en">The nature or genre of the resource.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
         <rdfs:label xml:lang="en">Type</rdfs:label>
         <core:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/type) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</core:note>
     </rdf:Description>

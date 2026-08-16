@@ -6,3 +6,7 @@ __pycache__/
 **/kbpedia_reference_concepts.n3
 **/kbpedia_reference_concepts_linkage.n3
 **/kbpedia_reference_concepts_linkage_inferrence_extended.n3
+**/.~lock.*#
+working/scratch/
+v300/version-dev/
+v310/version-dev/

@@ -1,27 +1,28 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://kbpedia.org/kko/rc/"
      xml:base="http://kbpedia.org/kko/rc/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:kko="http://kbpedia.org/ontologies/kko#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:wikiCategory="http://wikipedia.org/wiki/Category:">
-    <owl:Ontology rdf:about="http://kbpedia.org/kko/rc/">
-        <owl:versionIRI rdf:resource="http://kbpedia.org/rc/v300"/>
-        <owl:imports rdf:resource="file://C:/1-ActivePython/kbpedia/working/build/stubs/kko.owl"/>
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:x_1.1="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://kbpedia.org/kko/rc">
+        <owl:versionIRI rdf:resource="http://kbpedia.org/rc/v310"/>
+        <owl:imports rdf:resource="http://kbpedia.org/kko/v300"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="https://www.w3.org/2009/08/skos-reference/skos-owl1-dl.rdf"/>
-        <ns:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <ns:license rdf:resource="http://creativecommons.org/licenses/by/4.0"/>
         <kko:prefURI>http://www.kbpedia.org/ontologies/kbpedia_reference_concepts.owl</kko:prefURI>
-        <dc:creator xml:lang="en">Michael K. Bergman</dc:creator>
-        <dc:date xml:lang="en">TO BE UPDATED PRIOR TO RELEASE.</dc:date>
-        <dc:dateCopyrighted rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-06-01T20:00:00Z</dc:dateCopyrighted>
-        <dc:description xml:lang="en">KBpedia is a foundational ontology for capturing the essential components (or &apos;primitives&apos;) of knowledge bases. It is an amalgam of six of the largest public knowledge bases available -- Wikipedia, DBpedia, Wikidata, GeoNames, schema.org, and the UN Standard Products and Services Code (UNSPSC). It is designed for mapping and interoperating diverse ontologies to one another. The ultimate objective is to provide an ontology that surfaces and organizes the features within knowledge bases most useful to machine learning, artificial intelligence, data interoperability, schema mapping, and fact tagging and extraction.
+        <x_1.1:creator xml:lang="en">Michael K. Bergman</x_1.1:creator>
+        <x_1.1:date xml:lang="en">TO BE UPDATED PRIOR TO RELEASE.</x_1.1:date>
+        <x_1.1:dateCopyrighted rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-06-01T20:00:00Z</x_1.1:dateCopyrighted>
+        <x_1.1:description xml:lang="en">KBpedia is a foundational ontology for capturing the essential components (or &apos;primitives&apos;) of knowledge bases. It is an amalgam of six of the largest public knowledge bases available -- Wikipedia, DBpedia, Wikidata, GeoNames, schema.org, and the UN Standard Products and Services Code (UNSPSC). It is designed for mapping and interoperating diverse ontologies to one another. The ultimate objective is to provide an ontology that surfaces and organizes the features within knowledge bases most useful to machine learning, artificial intelligence, data interoperability, schema mapping, and fact tagging and extraction.
 
 The topl-level structure of KBpedia is governed by the KBpedia Knowledge Ontology. KKO is informed by the semiotics (theory of signs) articulated by the 19th century American logician, Charles Sanders Peirce. The design is based on the triadic ideas of Firstness, Secondness and Thirdness that informed virtually all of Peirce&apos;s formulations in logic and philosophy. 
 
@@ -31,8 +32,8 @@ Signs build upon signs -- such is the case with human languages and the concepts
 
 Words and language are themselves a Thirdness, which is the result of signmaking consensus. The semiotic or signmaking process builds from things as they are or may be to an ability to name and describe them though language -- and then ultimately to reason and argue over them leading to shared understandings, laws and complex notions of human concepts and worldviews. Each successive progression of signs involves this interplay of requisite Firstness, Secondness and Thirdness. This triadic nature of signs provides a coherent way to understand and organize the representation of knowledge at any level.
 
-Some 60,000 concepts are built upon the KKO to product the full KBpedia. KBpedia has a modular design built from typologies, which are major branches within this baseline knowledge base.</dc:description>
-        <dc:publisher xml:lang="en">Semantics Press LLC</dc:publisher>
+Some 60,000 concepts are built upon the KKO to product the full KBpedia. KBpedia has a modular design built from typologies, which are major branches within this baseline knowledge base.</x_1.1:description>
+        <x_1.1:publisher xml:lang="en">Semantics Press LLC</x_1.1:publisher>
         <vann:preferredNamespacePrefix>kbpedia</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://kbpedia.org/kko/rc/</vann:preferredNamespaceUri>
         <owl:priorVersion xml:lang="en">Version 1.00 of the KBpedia Knowledge Ontology (KKO), released Aug 6, 2016, was the first commercial release of the system. It was a rather complete re-write and re-organization of the UMBEL (Upper Mapping and Binding Exchange Layer) ontology, significantly modified to accommodate its purpose for integrating knowledge bases (KBs).</owl:priorVersion>
@@ -51,17 +52,18 @@ Some 60,000 concepts are built upon the KKO to product the full KBpedia. KBpedia
 The addition of UNSPSC added a net of about 5000 reference concepts (RCs) to the system, including identification and removal of about 700 duplicate RCs from the merge. (Total RCs exceed 58 K.) Mappings to Wikidata and Wikipedia were also made for the UNSPSC structure, which contains all three levels of the four-level UNSPSC structure, as well as thousands of the &apos;commodity&apos; level items in it. 
 
 Property mappings to UNSPSC, Wikidata, Wikipedia, and GeoNames, while previously available in separate mapping files, were also added to the base KBpedia system. Note that these KBpedia mappings are still available as separate files.</owl:priorVersion>
-        <owl:versionInfo xml:lang="en">Version 3.0 is the first of KBpedia to be built with the cowpoke package. Major changes that have occurred with this release are: 1) dropping of the mappings to OpenCyc, since that system has been abandoned by its developers, Cycorp; 2) replacement of all hyphens in IRI names with underscores to make the system more friendly to Python development; 3) a winnowing of the typology assignments to reduce non-germane ones (about two-thirds of prior assignments have been eliminated without affecting the intent or disjointedness assertions of prior versions; and 4) general bug fixes and updated of values and mapped items in the five years since the prior release.</owl:versionInfo>
-        <skos:altLabel xml:lang="en">KBpedia</skos:altLabel>
-        <skos:definition xml:lang="en">The KBpedia full structure is, one, a vocabulary of classes and predicates for describing domain ontologies, and, two, a logical knowledge graph for reasoning and extending for domain purposes, with the specific aim of promoting interoperability with external datasets and domains.</skos:definition>
-        <skos:editorialNote xml:lang="en">In KBpedia, &apos;CSP&apos; is a shorthand for Charles Sanders Peirce (see https://en.wikipedia.org/wiki/Charles_Sanders_Peirce), whose writings have had a great influence on the design of this knowledge graph. 
+        <owl:priorVersion xml:lang="en">Version 3.0 was the first of KBpedia to be built with the cowpoke package. Major changes that occurred with this release were: 1) dropping of the mappings to OpenCyc, since that system has been abandoned by its developers, Cycorp; 2) replacement of all hyphens in IRI names with underscores to make the system more friendly to Python development; 3) a winnowing of the typology assignments to reduce non-germane ones (about two-thirds of prior assignments have been eliminated without affecting the intent or disjointedness assertions of prior versions; and 4) general bug fixes and updated values and mapped items in the five years since the prior release.</owl:priorVersion>
+        <owl:versionInfo xml:lang="en">Version 3.1 is the first KBpedia version to be built with the full assistance of artificial intelligence (AI), namely the Claude large language model (LLM) from Anthropic. Early LLM work with this version also relied upon Grok from XAI and ChatGPT from OpenAI. Major changes that have occurred with this release are: 1) streamlining the build and extract &quot;roundtripping&quot; code by bringing consistency in build terminology and the reliance on command-line interface (CLI) switches versus use of Python dicts and configuration changes; 2) adding about 5000 Wikidata property mappings organized into a hierarchical structure informed by the work of Charles Sanders Peirce; 3) improved integrity checks and updates assisted by AI code; 4) generalization and moe consistent terminology across the cowpoke code base; 5) improved graph and entity visualizations in the KBpedia Web site; 6) AI-assistance analysis across the typology structure of KBpedia to improve the scope and balance of reference concepts in the system, resulting in the addition of a significant number of new RCs and the deletion of imbalanced older ones; and 7) other consistency checks across the knowledge graph. This version is now fully staged for advanced applications of AI to KBpedia.</owl:versionInfo>
+        <core:altLabel xml:lang="en">KBpedia</core:altLabel>
+        <core:definition xml:lang="en">The KBpedia full structure is, one, a vocabulary of classes and predicates for describing domain ontologies, and, two, a logical knowledge graph for reasoning and extending for domain purposes, with the specific aim of promoting interoperability with external datasets and domains.</core:definition>
+        <core:editorialNote xml:lang="en">In KBpedia, &apos;CSP&apos; is a shorthand for Charles Sanders Peirce (see https://en.wikipedia.org/wiki/Charles_Sanders_Peirce), whose writings have had a great influence on the design of this knowledge graph. 
 
 Also, some CSP quotes are derived from the following sources:
 
 CP x.y =Collected Papers of Charles Sanders Peirce, volume x, paragraph y. 
 
-See https://en.wikipedia.org/wiki/Charles_Sanders_Peirce_bibliography.</skos:editorialNote>
-        <skos:editorialNote xml:lang="en">To our knowledge, KBpedia is the first knowledge representation usable by computers that attempts to embrace Peircean principles in all of its aspects. Being first also means little scrutinized. We hope other scholars of Charles Sanders Peirce (CSP, pronounced &quot;purse&quot;) contribute with their understandings.
+See https://en.wikipedia.org/wiki/Charles_Sanders_Peirce_bibliography.</core:editorialNote>
+        <core:editorialNote xml:lang="en">To our knowledge, KBpedia is the first knowledge representation usable by computers that attempts to embrace Peircean principles in all of its aspects. Being first also means little scrutinized. We hope other scholars of Charles Sanders Peirce (CSP, pronounced &quot;purse&quot;) contribute with their understandings.
 
 The history of the KBpedia also shows periodic, big chunks of change. The ideas behind KBpedia are grand and encompassing. The writings of CSP are subtle and profound. Further, CSP&apos;s writings are still being transcribed and organized, and it is difficult to get what does exist in the literature in electronic form. The net result is sometimes new understandings and change in the KBpedia structure.
 
@@ -71,8 +73,8 @@ We welcome input at any time about how best to capture Peircean ideas into a com
 
 Peircean scholars have been the first source of information here. A good starting point is the entire Peirce category on Wikipedia (https://en.wikipedia.org/wiki/Category:Charles_Sanders_Peirce). There are speciality Peircean online sources too numerous to list that are also useful from these starting links.
 
-Another resource is the Peirce online discussion list: http://www.iupui.edu/~arisbe/PEIRCE-L/PEIRCE-L.HTM.</skos:editorialNote>
-        <skos:prefLabel xml:lang="en">KBpedia - Full Structure</skos:prefLabel>
+Another resource is the Peirce online discussion list: http://www.iupui.edu/~arisbe/PEIRCE-L/PEIRCE-L.HTM.</core:editorialNote>
+        <core:prefLabel xml:lang="en">KBpedia - Full Structure</core:prefLabel>
     </owl:Ontology>
     
 
